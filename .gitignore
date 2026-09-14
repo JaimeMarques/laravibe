@@ -1,0 +1,7 @@
+/vendor/
+/var/
+/.idea/
+/.vscode/
+.env
+*.log
+laravibe-report.*

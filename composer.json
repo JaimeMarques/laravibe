@@ -1,0 +1,48 @@
+{
+  "name": "mrthesoulz/laravibe",
+  "description": "Fail-closed security scanner built specifically for Laravel projects.",
+  "type": "library",
+  "license": "MIT",
+  "homepage": "https://github.com/MrTheSoulz/laravibe",
+  "keywords": [
+    "laravel",
+    "security",
+    "sast"
+  ],
+  "authors": [
+    {
+      "name": "MrTheSoulz"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/MrTheSoulz/laravibe/issues",
+    "source": "https://github.com/MrTheSoulz/laravibe"
+  },
+  "require": {
+    "php": "^8.2"
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^2.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Laravibe\\": "src/"
+    }
+  },
+  "bin": [
+    "bin/laravibe"
+  ],
+  "scripts": {
+    "test": "php tests/run.php",
+    "analyse": "phpstan analyse --no-progress --memory-limit=1G",
+    "security-audit": "composer audit --locked --abandoned=fail",
+    "check": [
+      "@test",
+      "@analyse",
+      "@security-audit"
+    ]
+  },
+  "config": {
+    "sort-packages": true
+  }
+}
